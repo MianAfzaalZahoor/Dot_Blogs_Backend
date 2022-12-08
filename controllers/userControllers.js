@@ -263,7 +263,7 @@ const resetPasswordLink = async (req, res) => {
     id: findUser._id
   }
   const token = jwt.sign(payload, process.env.SECRET_KEY, {expiresIn: '30m'})
-  const linkReset = `http://localhost:3000/resetpassword/${findUser._id}/${token}`
+  const linkReset = `https://dot-blogs-frontend.vercel.app/resetpassword/${findUser._id}/${token}`
 
   // SENDING LINK TO USER EMAIL
   const accessToken = await OAuth2_client.getAccessToken()
